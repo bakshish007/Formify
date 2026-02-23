@@ -530,7 +530,7 @@ export default function StudentDashboard() {
                               <option value="">Select teacher</option>
                               {teachers.map((t) => (
                                 <option key={t._id} value={t._id} disabled={pref2 === t._id || pref3 === t._id}>
-                                  {t.name} ({t.rollNumber}) {pref2 === t._id || pref3 === t._id ? "— Already selected" : ""}
+                                  {t.name} {pref2 === t._id || pref3 === t._id ? "— Already selected" : ""}
                                 </option>
                               ))}
                             </select>
@@ -541,7 +541,7 @@ export default function StudentDashboard() {
                               <option value="">Select teacher</option>
                               {teachers.map((t) => (
                                 <option key={t._id} value={t._id} disabled={pref1 === t._id || pref3 === t._id}>
-                                  {t.name} ({t.rollNumber}) {pref1 === t._id || pref3 === t._id ? "— Already selected" : ""}
+                                  {t.name} {pref1 === t._id || pref3 === t._id ? "— Already selected" : ""}
                                 </option>
                               ))}
                             </select>
@@ -552,7 +552,7 @@ export default function StudentDashboard() {
                               <option value="">Select teacher</option>
                               {teachers.map((t) => (
                                 <option key={t._id} value={t._id} disabled={pref1 === t._id || pref2 === t._id}>
-                                  {t.name} ({t.rollNumber}) {pref1 === t._id || pref2 === t._id ? "— Already selected" : ""}
+                                  {t.name} {pref1 === t._id || pref2 === t._id ? "— Already selected" : ""}
                                 </option>
                               ))}
                             </select>
@@ -726,7 +726,7 @@ export default function StudentDashboard() {
                       <option value="">Select teacher</option>
                       {teachers.map((t) => (
                         <option key={t._id} value={t._id} disabled={pref2 === t._id || pref3 === t._id}>
-                          {t.name} ({t.rollNumber}) {pref2 === t._id || pref3 === t._id ? "— Already selected" : ""}
+                          {t.name} {pref2 === t._id || pref3 === t._id ? "— Already selected" : ""}
                         </option>
                       ))}
                     </select>
@@ -737,7 +737,7 @@ export default function StudentDashboard() {
                       <option value="">Select teacher</option>
                       {teachers.map((t) => (
                         <option key={t._id} value={t._id} disabled={pref1 === t._id || pref3 === t._id}>
-                          {t.name} ({t.rollNumber}) {pref1 === t._id || pref3 === t._id ? "— Already selected" : ""}
+                          {t.name} {pref1 === t._id || pref3 === t._id ? "— Already selected" : ""}
                         </option>
                       ))}
                     </select>
@@ -748,7 +748,7 @@ export default function StudentDashboard() {
                       <option value="">Select teacher</option>
                       {teachers.map((t) => (
                         <option key={t._id} value={t._id} disabled={pref1 === t._id || pref2 === t._id}>
-                          {t.name} ({t.rollNumber}) {pref1 === t._id || pref2 === t._id ? "— Already selected" : ""}
+                          {t.name} {pref1 === t._id || pref2 === t._id ? "— Already selected" : ""}
                         </option>
                       ))}
                     </select>

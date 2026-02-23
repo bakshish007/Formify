@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import collegeLogo from "../assets/gnelogo.png";
 
 export default function TopNav() {
   const { user, logout } = useAuth();
@@ -20,6 +21,7 @@ export default function TopNav() {
           to="/"
           className="flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900 transition-colors hover:text-primary-600"
         >
+          <img src={collegeLogo} alt="College logo" className="h-9 w-auto object-contain sm:h-10" />
           <span className="text-primary-600">Formify</span>
         </Link>
 

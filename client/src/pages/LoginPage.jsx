@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
+import collegeLogo from "../assets/gnelogo.png";
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -37,16 +38,14 @@ export default function LoginPage() {
 
       <div className="mx-auto flex min-h-full max-w-md flex-col items-center justify-center px-4 py-10 safe-top safe-bottom">
         <div className="w-full">
-          {/* Logo */}
-          <div className="mb-8 flex justify-center">
-            <div className="text-3xl font-extrabold tracking-tight text-slate-900">
-              <span className="text-primary-600">Formify</span>
-            </div>
+          {/* College logo */}
+          <div className="mb-6 flex justify-center">
+            <img src={collegeLogo} alt="College logo" className="h-24 w-auto object-contain drop-shadow-sm sm:h-28" />
           </div>
 
           <div className="card-elevated">
             <div className="mb-6 text-center">
-              <h1 className="page-title text-2xl">Welcome back</h1>
+              <h1 className="text-2xl font-bold tracking-tight text-primary-600">Formify</h1>
               <p className="mt-2 text-sm text-slate-600">Sign in with your credentials to continue.</p>
             </div>
 

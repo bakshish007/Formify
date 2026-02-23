@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "seed:dummy-users": "node scripts/seedDummyUsers.js"
+    "seed:dummy-users": "node scripts/seedDummyUsers.js",
+    "seed:teachers": "node scripts/seedTeachers.js"
   },
   "keywords": [],
   "author": "",

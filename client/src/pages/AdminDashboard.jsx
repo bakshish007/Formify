@@ -332,7 +332,7 @@ export default function AdminDashboard() {
             <form className="grid gap-3" onSubmit={createUser}>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700">Roll number</label>
+                  <label className="block text-sm font-medium text-slate-700">Username</label>
                   <input
                     className="input-field"
                     value={newUser.rollNumber}
@@ -402,7 +402,7 @@ export default function AdminDashboard() {
                   <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary-200 border-t-primary-600" />
                 </div>
               ) : teachers.length ? (
-                <div className="space-y-3">
+                <div className="max-h-[60vh] overflow-y-auto space-y-3 pr-1">
                   {teachers.map((t) => (
                     <div
                       key={t._id}
@@ -454,7 +454,7 @@ export default function AdminDashboard() {
                   <div className="mb-4 text-lg font-semibold text-slate-900">Edit Teacher</div>
                   <form className="grid gap-3" onSubmit={saveTeacher}>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700">Roll Number</label>
+                      <label className="block text-sm font-medium text-slate-700">Username</label>
                       <input
                         className="input-field"
                         value={editTeacherForm.rollNumber}
@@ -521,7 +521,7 @@ export default function AdminDashboard() {
                 <table className="w-full text-left text-sm">
                   <thead className="border-b text-xs uppercase text-slate-500">
                     <tr>
-                      <th className="py-2 pr-4">Roll Number</th>
+                      <th className="py-2 pr-4">Username</th>
                       <th className="py-2 pr-4">Name</th>
                       <th className="py-2 pr-4">Actions</th>
                     </tr>
@@ -560,7 +560,7 @@ export default function AdminDashboard() {
                 <div className="mb-4 text-lg font-semibold text-slate-900">Edit Student</div>
                 <form className="grid gap-3" onSubmit={saveStudent}>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700">Roll Number</label>
+                    <label className="block text-sm font-medium text-slate-700">Username</label>
                     <input
                       className="input-field"
                       value={editStudentForm.rollNumber}
@@ -641,13 +641,19 @@ export default function AdminDashboard() {
             <form className="mt-4 grid gap-3 rounded-xl border border-slate-200 bg-slate-50/80 p-4" onSubmit={overrideSupervisor}>
               <div className="section-title">Override form</div>
               <div>
-                <label className="block text-sm font-medium text-slate-700">Selected group</label>
-                <input
+                <label className="block text-sm font-medium text-slate-700">Group</label>
+                <select
                   className="input-field"
                   value={override.groupId}
                   onChange={(e) => setOverride((p) => ({ ...p, groupId: e.target.value }))}
-                  placeholder="Paste group _id or click Select above"
-                />
+                >
+                  <option value="">Select a group</option>
+                  {groups.map((g) => (
+                    <option key={g._id} value={g._id}>
+                      {g.groupId} — {g.universalProjectTitle || "No title"}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700">Supervisor</label>
